@@ -1,0 +1,10 @@
+@import "bootstrap/scss/functions";
+$primary: rgb(105, 108, 255);
+$form-check-input-checked-bg: #696CFF;
+$dropdown-bg: #f8f9fa;
+$dropdown-link-hover-bg: #696CFF;
+@import "bootstrap/scss/bootstrap";
+
+.form-check-input:focus {
+  box-shadow: none;
+}

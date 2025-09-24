@@ -1,0 +1,230 @@
+#post-data {
+  position: relative;
+  /* tạo context để loading-overlay vị trí tuyệt đối */
+}
+
+/* overlay phủ lên tbody */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(241, 241, 241, 0.7);
+  z-index: 5;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* spinner */
+#post-data .spinner {
+  border: 4px solid #f3f3f3;
+  /* màu nền xám nhạt */
+  border-top: 4px solid #3498db;
+  /* màu thanh quay */
+  border-radius: 50%;
+  /* tạo hình tròn */
+  width: 40px;
+  /* chiều rộng */
+  height: 40px;
+  /* chiều cao bằng chiều rộng */
+  animation: spin 1s linear infinite;
+  box-sizing: border-box;
+  /* đảm bảo tính toán đúng */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.custom-form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.custom-form-row label {
+  flex: 0 0 150px;
+  font-weight: 600;
+  padding-right: 1rem;
+  white-space: nowrap;
+}
+
+.custom-form-row input,
+.custom-form-row textarea {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Responsive: khi màn hình nhỏ hơn 768px (tablet, mobile) */
+@media (max-width: 767.98px) {
+  .custom-form-row {
+    flex-direction: column;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    align-items: stretch;
+  }
+
+  .custom-form-row label {
+    flex: none;
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .custom-form-row input,
+  .custom-form-row textarea {
+    flex: none;
+    width: 100%;
+  }
+}
+
+.custom-form-row>div {
+  flex: 1;
+  min-width: 0;
+}
+
+.custom-form-row .logo-preview-container {
+  flex: none;
+  width: 100px;
+  height: 100px;
+  margin-left: 15px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#logo-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.th-admin-fit, 
+.td-admin-fit{    
+  width: 1%;
+  white-space: nowrap;
+  min-width: 100px;
+}
+
+.action-btn{
+  padding: 2px 4px;
+}
+
+.action-btn-container
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.nav-tabs .nav-link.active {
+  color: white !important;
+  background-color: #1E90FF !important;
+  border-color: #1E90FF #1E90FF transparent;
+  font-weight: 600;
+}
+
+table.table-bordered thead tr {
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+table.table-bordered th,
+table.table-bordered td {
+  border-left: none !important;
+  border-right: none !important;
+  vertical-align: middle;
+}
+
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.menu-sub .menu-link {
+    padding-left: 1.5rem; 
+}
+
+
+/* Xử lý togger */
+.layout-wrapper.layout-menu-collapsed .layout-menu {
+  width: 60px !important;
+  overflow-x: visible !important;
+  overflow-y: hidden !important;
+  position: relative;
+  z-index: 10;
+}
+
+.layout-wrapper.layout-menu-collapsed .layout-menu:hover {
+  width: 16.25rem !important;
+}
+
+
+.layout-wrapper.layout-menu-collapsed .layout-page {
+  margin-left: 60px !important;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (min-width: 1200px) {
+  .layout-menu-collapsed:not(.layout-menu-hover):not(.layout-menu-offcanvas):not(.layout-menu-fixed-offcanvas) 
+  .layout-menu .app-brand .layout-menu-toggle {
+    display: flex !important;
+  }
+
+  .layout-menu-collapsed .layout-menu .app-brand {
+    width: auto !important; 
+  }
+}
+/* Cấp 1 được chọn */
+.menu-item.active > .menu-link {
+  background-color: #eef0ff;
+  color: #6366f1;
+  font-weight: bold;
+}
+
+/* Menu đang mở */
+.menu-item.open > .menu-link {
+  background-color: #f5f7ff;
+}
+
+/* Cấp 2-3 được chọn */
+.menu-sub .menu-item.active > .menu-link {
+  background-color: #e5e7ff;
+  /* border-left: 3px solid #6366f1; */
+  color: #4f46e5;
+  font-weight: bold;
+}
+
+.menu-sub {
+    display: none;
+}
+.menu-item.open > .menu-sub {
+    display: block;
+}
+
+/* Khi sidebar THU GỌN thì ẩn menu cấp 2 trở đi */
+.layout-wrapper.layout-menu-collapsed .menu-sub {
+  display: none !important;
+}
+
+/* Khi hover vào sidebar thì mới hiển thị lại các menu con */
+.layout-wrapper.layout-menu-collapsed .layout-menu:hover .menu-item.open > .menu-sub {
+  display: block !important;
+}
+
+
+
